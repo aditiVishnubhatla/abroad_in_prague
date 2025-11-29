@@ -7,82 +7,6 @@
     <title>Travel Itinerary - Abroad in Prague</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .city-section {
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 20px;
-            background-color: #f9f9f9;
-        }
-
-
-    .city-section h2 {
-        margin-top: 0;
-        color: #2c3e50;
-    }
-
-    ul.checklist {
-        list-style: none;
-        padding-left: 0;
-    }
-
-    ul.checklist li {
-        margin: 8px 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    ul.checklist li button {
-        margin-left: 10px;
-        cursor: pointer;
-        padding: 2px 6px;
-        border-radius: 4px;
-        border: 1px solid #555;
-        background-color: #eee;
-    }
-
-    ul.checklist li button.checked {
-        background-color: #2ecc71;
-        color: white;
-        border: 1px solid #27ae60;
-    }
-
-    .add-task {
-        margin-top: 10px;
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-
-    .add-task input {
-        flex: 1;
-        padding: 5px;
-        border-radius: 4px;
-        border: 1px solid #aaa;
-    }
-
-    .add-task button {
-        padding: 5px 10px;
-        border-radius: 4px;
-        border: none;
-        background-color: #2c3e50;
-        color: white;
-        cursor: pointer;
-    }
-
-    .add-task button:hover {
-        background-color: #34495e;
-    }
-
-    .add-task label {
-        flex-basis: 100%;
-        margin-bottom: 5px;
-    }
-</style>
-
-
 </head>
 <body>
     <!-- HEADER -->
@@ -113,160 +37,180 @@
         </div>
     </header>
 
-
-<!-- ITINERARY CHECKLIST -->
 <main>
     <h1>My Europe Travel Itinerary</h1>
 
-    <section class="city-section" id="budapest">
-        <h2>Budapest, Hungary</h2>
-        <ul class="checklist">
-            <li>Visit Buda Castle <button>✔</button></li>
-            <li>Relax at Széchenyi Thermal Baths <button>✔</button></li>
-            <li>Walk across Chain Bridge <button>✔</button></li>
-        </ul>
-        <form class="add-task">
-            <label for="budapest-task">Add a new Budapest activity:</label>
-            <input type="text" id="budapest-task" placeholder="Type activity...">
-            <button type="button">Add</button>
-        </form>
-    </section>
 
-    <section class="city-section" id="paris">
-        <h2>Paris, France</h2>
-        <ul class="checklist">
-            <li>Climb the Eiffel Tower <button>✔</button></li>
-            <li>Explore the Louvre Museum <button>✔</button></li>
-            <li>Stroll along the Seine River <button>✔</button></li>
-            <li>Enjoy French pastries at a café <button>✔</button></li>
-        </ul>
-        <form class="add-task">
-            <label for="paris-task">Add a new Paris activity:</label>
-            <input type="text" id="paris-task" placeholder="Type activity...">
-            <button type="button">Add</button>
-        </form>
-    </section>
+<!-- Budapest -->
+<section class="city-section" id="budapest">
+    <h2>Budapest, Hungary</h2>
+    <ul class="checklist">
+        <li>Visit Buda Castle <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+        <li>Relax at Széchenyi Thermal Baths <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+        <li>Walk across Chain Bridge <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+    </ul>
+    <form class="add-task">
+        <label for="budapest-task">Add a new Budapest activity:</label>
+        <input type="text" id="budapest-task" placeholder="Type activity...">
+        <button type="button">Add</button>
+    </form>
+</section>
 
-    <section class="city-section" id="switzerland">
-        <h2>Switzerland</h2>
-        <ul class="checklist">
-            <li>Visit the Matterhorn <button>✔</button></li>
-            <li>Take a scenic train ride <button>✔</button></li>
-            <li>Explore Zurich old town <button>✔</button></li>
-        </ul>
-        <form class="add-task">
-            <label for="switzerland-task">Add a new Switzerland activity:</label>
-            <input type="text" id="switzerland-task" placeholder="Type activity...">
-            <button type="button">Add</button>
-        </form>
-    </section>
+<!-- Paris -->
+<section class="city-section" id="paris">
+    <h2>Paris, France</h2>
+    <ul class="checklist">
+        <li>Climb the Eiffel Tower <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+        <li>Explore the Louvre Museum <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+        <li>Stroll along the Seine River <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+        <li>Enjoy French pastries at a café <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+    </ul>
+    <form class="add-task">
+        <label for="paris-task">Add a new Paris activity:</label>
+        <input type="text" id="paris-task" placeholder="Type activity...">
+        <button type="button">Add</button>
+    </form>
+</section>
 
-    <section class="city-section" id="uk">
-        <h2>United Kingdom</h2>
-        <ul class="checklist">
-            <li>See the Big Ben and Parliament <button>✔</button></li>
-            <li>Visit the British Museum <button>✔</button></li>
-            <li>Walk along the Tower Bridge <button>✔</button></li>
-        </ul>
-        <form class="add-task">
-            <label for="uk-task">Add a new UK activity:</label>
-            <input type="text" id="uk-task" placeholder="Type activity...">
-            <button type="button">Add</button>
-        </form>
-    </section>
+<!-- Switzerland -->
+<section class="city-section" id="switzerland">
+    <h2>Switzerland</h2>
+    <ul class="checklist">
+        <li>Visit the Matterhorn <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+        <li>Take a scenic train ride <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+        <li>Explore Zurich old town <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+    </ul>
+    <form class="add-task">
+        <label for="switzerland-task">Add a new Switzerland activity:</label>
+        <input type="text" id="switzerland-task" placeholder="Type activity...">
+        <button type="button">Add</button>
+    </form>
+</section>
 
-    <section class="city-section" id="vienna">
-        <h2>Vienna, Austria</h2>
-        <ul class="checklist">
-            <li>Tour Schönbrunn Palace <button>✔</button></li>
-            <li>Visit St. Stephen’s Cathedral <button>✔</button></li>
-            <li>Enjoy Viennese coffee and pastries <button>✔</button></li>
-        </ul>
-        <form class="add-task">
-            <label for="vienna-task">Add a new Vienna activity:</label>
-            <input type="text" id="vienna-task" placeholder="Type activity...">
-            <button type="button">Add</button>
-        </form>
-    </section>
+<!-- UK -->
+<section class="city-section" id="uk">
+    <h2>United Kingdom</h2>
+    <ul class="checklist">
+        <li>See the Big Ben and Parliament <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+        <li>Visit the British Museum <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+        <li>Walk along the Tower Bridge <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+    </ul>
+    <form class="add-task">
+        <label for="uk-task">Add a new UK activity:</label>
+        <input type="text" id="uk-task" placeholder="Type activity...">
+        <button type="button">Add</button>
+    </form>
+</section>
 
-    <section class="city-section" id="spain">
-        <h2>Spain</h2>
-        <ul class="checklist">
-            <li>Explore Sagrada Família in Barcelona <button>✔</button></li>
-            <li>Walk through Plaza Mayor, Madrid <button>✔</button></li>
-            <li>Enjoy tapas at a local restaurant <button>✔</button></li>
-        </ul>
-        <form class="add-task">
-            <label for="spain-task">Add a new Spain activity:</label>
-            <input type="text" id="spain-task" placeholder="Type activity...">
-            <button type="button">Add</button>
-        </form>
-    </section>
+<!-- Vienna -->
+<section class="city-section" id="vienna">
+    <h2>Vienna, Austria</h2>
+    <ul class="checklist">
+        <li>Tour Schönbrunn Palace <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+        <li>Visit St. Stephen’s Cathedral <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+        <li>Enjoy Viennese coffee and pastries <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+    </ul>
+    <form class="add-task">
+        <label for="vienna-task">Add a new Vienna activity:</label>
+        <input type="text" id="vienna-task" placeholder="Type activity...">
+        <button type="button">Add</button>
+    </form>
+</section>
 
-    <section class="city-section" id="portugal">
-        <h2>Portugal</h2>
-        <ul class="checklist">
-            <li>Visit Belém Tower in Lisbon <button>✔</button></li>
-            <li>Explore Porto’s Ribeira District <button>✔</button></li>
-            <li>Try traditional Pastéis de Nata <button>✔</button></li>
-        </ul>
-        <form class="add-task">
-            <label for="portugal-task">Add a new Portugal activity:</label>
-            <input type="text" id="portugal-task" placeholder="Type activity...">
-            <button type="button">Add</button>
-        </form>
-    </section>
+<!-- Spain -->
+<section class="city-section" id="spain">
+    <h2>Spain</h2>
+    <ul class="checklist">
+        <li>Explore Sagrada Família in Barcelona <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+        <li>Walk through Plaza Mayor, Madrid <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+        <li>Enjoy tapas at a local restaurant <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+    </ul>
+    <form class="add-task">
+        <label for="spain-task">Add a new Spain activity:</label>
+        <input type="text" id="spain-task" placeholder="Type activity...">
+        <button type="button">Add</button>
+    </form>
+</section>
 
-    <section class="city-section" id="dublin">
-        <h2>Dublin, Ireland</h2>
-        <ul class="checklist">
-            <li>Visit Trinity College and Book of Kells <button>✔</button></li>
-            <li>Explore Temple Bar <button>✔</button></li>
-            <li>Walk along the River Liffey <button>✔</button></li>
-        </ul>
-        <form class="add-task">
-            <label for="dublin-task">Add a new Dublin activity:</label>
-            <input type="text" id="dublin-task" placeholder="Type activity...">
-            <button type="button">Add</button>
-        </form>
-    </section>
+<!-- Portugal -->
+<section class="city-section" id="portugal">
+    <h2>Portugal</h2>
+    <ul class="checklist">
+        <li>Visit Belém Tower in Lisbon <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+        <li>Explore Porto’s Ribeira District <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+        <li>Try traditional Pastéis de Nata <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+    </ul>
+    <form class="add-task">
+        <label for="portugal-task">Add a new Portugal activity:</label>
+        <input type="text" id="portugal-task" placeholder="Type activity...">
+        <button type="button">Add</button>
+    </form>
+</section>
+
+<!-- Dublin -->
+<section class="city-section" id="dublin">
+    <h2>Dublin, Ireland</h2>
+    <ul class="checklist">
+        <li>Visit Trinity College and Book of Kells <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+        <li>Explore Temple Bar <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+        <li>Walk along the River Liffey <button class="check-btn">✔<span class="sr-only">Mark task complete</span></button></li>
+    </ul>
+    <form class="add-task">
+        <label for="dublin-task">Add a new Dublin activity:</label>
+        <input type="text" id="dublin-task" placeholder="Type activity...">
+        <button type="button">Add</button>
+    </form>
+</section>
+
 
 </main>
 
-<!-- FOOTER -->
 <footer>
     <p>© 2025 Abroad in Prague</p>
 </footer>
 
 <script>
-    // Toggle checklist button
+document.addEventListener('DOMContentLoaded', () => {
+    // Toggle checklist buttons
     document.querySelectorAll('ul.checklist li button').forEach(btn => {
-        btn.addEventListener('click', () => {
-            btn.classList.toggle('checked');
-        });
+        btn.addEventListener('click', () => btn.classList.toggle('checked'));
     });
 
     // Add new task functionality
-    document.querySelectorAll('.add-task').forEach(section => {
-        const input = section.querySelector('input');
-        const addBtn = section.querySelector('button');
-        const checklist = section.previousElementSibling;
+    document.querySelectorAll('.add-task').forEach(form => {
+        const input = form.querySelector('input');
+        const addBtn = form.querySelector('button');
+        const checklist = form.closest('.city-section').querySelector('ul.checklist');
 
         addBtn.addEventListener('click', () => {
             const value = input.value.trim();
-            if(value !== '') {
+            if (value !== '') {
                 const li = document.createElement('li');
-                li.textContent = value;
+
+                const span = document.createElement('span');
+                span.textContent = value;
+
                 const btn = document.createElement('button');
+                btn.classList.add('check-btn');
+                btn.textContent = '✔';
+
+                const srText = document.createElement('span');
+                srText.classList.add('sr-only');
+                srText.textContent = 'Mark task complete';
+                btn.appendChild(srText);
+
                 btn.addEventListener('click', () => btn.classList.toggle('checked'));
+
+                li.appendChild(span);
                 li.appendChild(btn);
                 checklist.appendChild(li);
+
                 input.value = '';
             }
         });
     });
+});
 </script>
-
 
 </body>
 </html>

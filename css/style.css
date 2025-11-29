@@ -1,0 +1,445 @@
+/* --- GLOBAL --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #FFF8ED; /* cream */
+    color: #1e1e1e;
+    line-height: 1.6;
+    }
+    
+    /* --- HEADER + NAV --- */
+    header {
+    background: #247D7F; /* deep teal */
+    color: white;
+    width: 100%;
+    border-bottom: 4px solid #C29470; /* accent border */
+    }
+    
+    nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    }
+    
+    nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    }
+    
+    nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 10px 16px;
+    border-radius: 6px;
+    transition: 0.3s;
+    }
+    
+    nav ul li a:hover {
+    background: #80B9C8; /* soft blue */
+    color: #1e1e1e;
+    }
+    
+    /* Dropdown */
+    .nav-links li.dropdown {
+    position: relative;
+    }
+    
+    .nav-links li.dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 150px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 0;
+    z-index: 1000;
+    }
+    
+    .nav-links li.dropdown .dropdown-menu li a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    }
+    
+    .nav-links li.dropdown .dropdown-menu li a:hover {
+    background-color: #f0f0f0;
+    }
+    
+    .nav-links li.dropdown:hover .dropdown-menu {
+    display: block;
+    }
+    
+    /* --- HERO SECTION --- */
+    .hero {
+    padding: 80px 20px;
+    background-image: url('../images/prague-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    position: relative;
+    }
+    
+    .hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 0;
+    }
+    
+    .hero h2, .hero p {
+    position: relative;
+    z-index: 1;
+    text-shadow: 1px 1px 4px black;
+    margin-bottom: 15px;
+    }
+    
+    /* --- CONTENT SECTIONS --- */
+    .prague-info,
+    .about-preview,
+    .section {
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: 30px auto;
+    background: #B2D9C4; /* light mint */
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    /* --- BUTTON STYLING --- */
+    .btn {
+    display: inline-block;
+    background: #44916F; /* green */
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+    }
+    
+    .btn:hover {
+    background: #247D7F; /* deep teal */
+    }
+    
+    .about-preview .btn {
+    background: #247D7F;
+    color: #FFF;
+    }
+    
+    .about-preview .btn:hover {
+    background: #1B605F;
+    color: #FFF;
+    }
+    
+    /* --- FOOTER --- */
+    footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    color: #1E1E1E;
+    background: #C29470;
+    }
+    
+    /* --- ABOUT PAGE --- */
+    .about-header {
+    text-align: center;
+    margin-top: 40px;
+    }
+    
+    .headshot {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    
+    /* --- GALLERY --- */
+    .gallery-container {
+    text-align: center;
+    margin-top: 40px;
+    }
+    
+    .gallery {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    
+    .gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    
+    /* Scrollable Gallery */
+    .prague-scroll-gallery {
+    text-align: center;
+    margin: 40px auto;
+    }
+    
+    .scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    scroll-behavior: smooth;
+    }
+    
+    .scroll-container::-webkit-scrollbar {
+    height: 12px;
+    }
+    
+    .scroll-container::-webkit-scrollbar-thumb {
+    background: #247D7F;
+    border-radius: 6px;
+    }
+    
+    .scroll-container img {
+    flex: 0 0 auto;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+    }
+    
+    .scroll-container img:hover {
+    transform: scale(1.05);
+    }
+    
+    /* --- ITINERARY SECTION --- */
+    .itinerary-title {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 2rem;
+    color: #247D7F; /* deep teal */
+    }
+    
+    .city-section {
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background: #f0f7f7;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .city-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .city-section h2 {
+    color: #1B605F;
+    margin-bottom: 15px;
+    }
+    
+    ul.checklist {
+    list-style-type: disc;
+    padding-left: 20px;
+    }
+    
+    ul.checklist li {
+    margin: 10px 0;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    
+    ul.checklist li button {
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 5px;
+    border: 1px solid #247D7F;
+    background: #fff;
+    transition: 0.3s;
+    }
+    
+    ul.checklist li button.checked {
+    background: #247D7F;
+    color: #fff;
+    border: 1px solid #1B605F;
+    }
+    
+    .add-task {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    }
+    
+    .add-task input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    }
+    
+    .add-task button {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    background: #247D7F;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    }
+    
+    .add-task button:hover {
+    background: #1B605F;
+    }
+    
+    /* --- RESPONSIVE MEDIA QUERIES --- */
+    
+    /* Mobile < 600px */
+    @media (max-width: 599px) {
+    nav ul {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    }
+
+
+    .hero {
+        padding: 60px 10px;
+        height: 50vh;
+    }
+    
+    .prague-info,
+    .about-preview,
+    .section {
+        padding: 30px 15px;
+    }
+    
+    .scroll-container img {
+        width: 200px;
+        height: 150px;
+    }
+    
+    .gallery {
+        height: 250px;
+    }
+    
+    .headshot {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .city-section {
+        padding: 15px;
+        margin: 15px 10px;
+    }
+    
+    .add-task {
+        flex-direction: column;
+    }
+    
+    .add-task button {
+        width: 100%;
+    }
+    
+    
+    }
+    
+    /* Tablet 600px - 1024px */
+    @media (min-width: 600px) and (max-width: 1024px) {
+    nav ul {
+    justify-content: space-around;
+    flex-wrap: wrap;
+    }
+    
+    
+    .hero {
+        padding: 70px 20px;
+        height: 55vh;
+    }
+    
+    .prague-info,
+    .about-preview,
+    .section {
+        padding: 40px 20px;
+    }
+    
+    .scroll-container img {
+        width: 250px;
+        height: 180px;
+    }
+    
+    .gallery {
+        height: 300px;
+    }
+    
+    .headshot {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .city-section {
+        padding: 20px;
+        margin: 20px 15px;
+    }
+
+    
+    }
+    
+    /* Laptop/Desktop >1024px */
+    @media (min-width: 1025px) {
+    nav ul {
+    flex-wrap: nowrap;
+    }
+    
+   
+    .hero {
+        height: 60vh;
+    }
+    
+    .scroll-container img {
+        width: 300px;
+        height: 200px;
+    }
+    
+    .gallery {
+        height: 400px;
+    }
+    
+    .headshot {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .city-section {
+        padding: 25px;
+    }
+    
+    
+    }
+    

@@ -1,48 +1,46 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Checklist toggle
+    // Toggle checklist buttons
     const buttons = document.querySelectorAll('ul.checklist li button');
     buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            btn.classList.toggle('checked');
-        });
+    btn.addEventListener('click', () => btn.classList.toggle('checked'));
     });
     
-    // Add new task
-    const addButtons = document.querySelectorAll('.add-btn');
-    addButtons.forEach((btn, index) => {
-        btn.addEventListener('click', () => {
-            const input = btn.previousElementSibling;
+    // Add new task functionality
+    const addForms = document.querySelectorAll('.add-task');
+    addForms.forEach(form => {
+        const input = form.querySelector('input');
+        const addBtn = form.querySelector('button');
+        const checklist = form.closest('.city-section').querySelector('ul.checklist');
+    
+        addBtn.addEventListener('click', () => {
             const value = input.value.trim();
-            if (value) {
-                const ul = btn.closest('.city-section').querySelector('ul.checklist');
+            if (value !== '') {
+                // Create the li element
                 const li = document.createElement('li');
-                li.innerHTML = `${value} <button>✔</button>`;
-                ul.appendChild(li);
     
-                // Add event listener to new button
-                li.querySelector('button').addEventListener('click', e => {
-                    e.target.classList.toggle('checked');
-                });
+                // Create a span for the task text
+                const span = document.createElement('span');
+                span.textContent = value;
     
+                // Create the button for ✔
+                const btn = document.createElement('button');
+                btn.textContent = '✔';
+                btn.classList.add('check-btn'); // optional, if your CSS targets this
+                btn.addEventListener('click', () => btn.classList.toggle('checked'));
+    
+                // Append span and button to li
+                li.appendChild(span);
+                li.appendChild(btn);
+    
+                // Append li to checklist
+                checklist.appendChild(li);
+    
+                // Clear input
                 input.value = '';
             }
         });
     });
-
-    // Accessible Star Rating
-    const stars = document.querySelectorAll('.star-btn');
-    const ratingInput = document.getElementById('rating');
+  
     
-    if (stars.length && ratingInput) {
-        stars.forEach(star => {
-            star.addEventListener('click', () => {
-                const value = star.getAttribute('data-value');
-                ratingInput.value = value;
-                stars.forEach(s => {
-                    s.style.backgroundColor = s.getAttribute('data-value') <= value ? 'gold' : '';
-                    s.setAttribute('aria-checked', s.getAttribute('data-value') === value ? 'true' : 'false');
-                });
-            });
-        });
-    }
-});
+    });
+    
